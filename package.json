@@ -1,0 +1,32 @@
+{
+  "name": "gerales_portfolio",
+  "version": "1.0.0",
+  "description": "Website that shows who I am",
+  "main": "application/app.js",
+  "scripts": {
+    "dev": "nodemon application/app.js",
+    "start": "node application/app.js",
+    "test": "jest --detectOpenHandles --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAGerales/portfolioWebsite.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "portfolio"
+  ],
+  "author": "Jacob Gerales",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JAGerales/portfolioWebsite/issues"
+  },
+  "homepage": "https://github.com/JAGerales/portfolioWebsite#readme",
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "bootswatch": "^5.3.3",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
