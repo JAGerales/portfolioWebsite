@@ -12,9 +12,29 @@ app.set('views', path.join(__dirname, 'public', 'views'));
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Define a route for the home page
+// Route for the home page
 app.get('/', (req, res) => {
   res.render('index');
+});
+
+// Route for About Me
+app.get('/about', (req, res) => {
+  res.render('aboutMe');
+});
+
+// Route for Projects
+app.get('/projects', (req, res) => {
+  res.render('projects');
+});
+
+// Route for Pictures
+app.get('/pictures', (req, res) => {
+  res.render('pictures');
+});
+
+// Route for Blog
+app.get('/blog', (req, res) => {
+  res.render('blog');
 });
 
 // Start the server
