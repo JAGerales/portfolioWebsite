@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
 });
 
 // Route for About Me
-app.get('/about', (req, res) => {
-  res.render('aboutMe');
+app.get('/contactMe', (req, res) => {
+  res.render('contactMe');
 });
 
 // Route for Projects

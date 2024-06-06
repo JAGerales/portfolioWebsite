@@ -2,5 +2,96 @@
 <body class="wrapper d-flex flex-column min-vh-100">
     <%- include('./partials/navbar') %> 
 
+    <ol class="breadcrumb" style="margin-top: 10px; margin-left: 10px;">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Projects</li>
+    </ol>
+
+    <div class="container mt-2">
+        <div class="col-md-8 offset-md-2">
+            <div class="card mb-4">
+                <img src="https://media.giphy.com/media/l0MYEWpv7Ue0RFVaE/giphy.gif" class="card-img-top project-image" alt="Project Image">
+                <div class="card-body">
+                    <h2 class="card-title">Gator Garage</h2>
+                    <p class="card-text">Senior capstone project which offers eccomerce services to SFSU students, faculty, and staff. Worked in a diverse team of 6 led and applied industry work methodologies such as SCRUM. </p>
+                    <h4>Technologies Used</h4>
+                    <ul>
+                        <li>Language: JavaScript, CSS, HTML</li>
+                        <li>Database: MySQL</li>
+                        <li>NodeJS Libraries: Express, Express-Session, Multer, Sharp, mysql2</li>
+                        <li>Template Engine: EJS</li>
+                    </ul>
+                    <h4>Project Details</h4>
+                    <p class="project-details">Users shall be able to post items, log in, sign up for an account, and message users.</p>
+                        <ul>
+                            <li>Tasked with designing mySQL database.</li>
+                            <li>Referenced use cases and personas to help with initial design process of database.</li>
+                            <li>MySQL database currently being maintained with user posted content and user credentials including hashed password.</li>
+                        </ul>
+                    <p class="project-details">Middleware must be created in order to facilitate website functionality.</p>
+                        <ul>
+                            <li>Tasked with designing middleware that handles various website functions.</li>
+                            <li>Met with frontend lead to ensure that middleware design complimented the front end.</li>
+                            <li>Unit tests created alongside middleware to uphold bug - free web application.</li>
+                        </ul>
+                    <a href="https://gatorgarage.net" target="_blank" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-8 offset-md-2">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/800x400" class="card-img-top project-image" alt="Project Image">
+                    <div class="card-body">
+                        <h2 class="card-title">Gator Dash</h2>
+                        <p class="card-text">A fun 2D platformer that challenges the player to race against the clock or reverse time to make it to class on time!</p>
+                        <h4>Technologies Used</h4>
+                        <ul>
+                            <li>Engine: Unity 2D</li>
+                            <li>Languages: C#, ShaderLab, HLSL</li>
+                        </ul>
+                        <h4>Project Details</h4>
+                        <p class="project-details">Assumed team lead and handled project management to ensure a quality project is delivered on time.</p>
+                        <ul>
+                            <li>Had to lead a team of 3 to create a game without prior game development experience.</li>
+                            <li>Delegated roles early into project development and assigned checkpoints daily and weekly. Applied SCRUM to monitor progress. </li>
+                            <li>Successfully delivered project on time and without bugs. Implemented dynamic blinn - phong lighting, player movement logic, and texturing.</li>
+                        </ul>
+                        <a href="https://github.com/JAGerales/csc630_gatorDash" target="_blank" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 offset-md-2">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/800x400" class="card-img-top project-image" alt="Project Image">
+                    <div class="card-body">
+                        <h2 class="card-title">Gator Garage</h2>
+                        <p class="card-text">Senior capstone project which offers eccomerce services to SFSU students, faculty, and staff. Worked in a diverse team of 6 led and applied industry work methedologies such as SCRUM. </p>
+                        <h4>Technologies Used</h4>
+                        <ul>
+                            <li>JavaScript</li>
+                            <li>MySQL</li>
+                            <li>NodeJS Libraries (EJS, Express, Multer, etc.)</li>
+                            <li>Hosted on digitalOcean droplet</li>
+                        </ul>
+                        <h4>Project Details</h4>
+                        <p class="project-details">Users shall be able to post items, log in, sign up for an account, and message users.</p>
+                            <ul>
+                                <li>Tasked with designing mySQL database.</li>
+                                <li>Referenced use cases and personas to help with initial design process of database.</li>
+                                <li>mySQL database is currently being maintained with user posted content and user credentials including hashed password.</li>
+                            </ul>
+                        <p class="project-details">Implemented and maintained middleware necessary for website functions such as posting items for sale and signing in.</p>
+                        <a href="https://gatorgarage.net" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
     <%- include('./partials/footer') %> 
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>
+</html>
