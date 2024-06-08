@@ -2,15 +2,17 @@
 <body class="wrapper d-flex flex-column min-vh-100">
   <%- include('./partials/navbar') %>  
   <div class="container-fluid">
-    <main class="flex-fill">
+    <br class="flex-fill">
       <br class="mt-5 justify-content-center">
       <div class="row">
         <div class="col-md-4">
-          <img src="https://picsum.photos/300" alt="Placeholder Image" class="img-fluid rounded-circle ms-5">
+          <div class="image-container">
+              <img src="images/DSCF0055.JPG" alt="Image of Me" class="img-fluid rounded-circle">
+          </div>
         </div>
         <div class="col-md-8">
-          <h1>Welcome to My Portfolio!</h1>
-          <p>My name is Jacob. I am a self driven and insatiably curious computer scientist that loves listening to music, practicing photography, and powerlifting!
+          <h1>My Name is Jacob.</h1>
+          <p>Welcome to my portfolio! I am a self driven and insatiably curious computer scientist that loves listening to music, practicing photography, and powerlifting!
             Here is my proud collection of my technical expertise alongside my personal interests that I would love to share with you.
             Thank you for visiting and enjoy your stay!
           </p>
@@ -28,8 +30,23 @@
             <a href="https://gatorgarage.net" target="_blank" class="card-link">View Website</a>
           </div>
         </div>
-
-        <br></br>
+        <div class="container mt-5">
+          <!-- Education Section -->
+          <section id="education" class="mt-3 education-section">
+              <h2>Education</h2>
+              <div class="card mb-3">
+                <img src="images/sfsuLogo.png" alt="SFSU Logo" class="education-logo">
+                  <div class="card-body">
+                      <h4 class="card-title">San Francisco State University</h4>
+                      <h5 class="card-subtitle mb-2 text-muted">Bachelors in Computer Science</h5>
+                      <p class="card-text">
+                          Graduated in May 2024 with a GPA of 3.41. My studies included a wide range of subjects such as software development, algorithms, data structures, computer networks, databases, and computer graphics. During my time at SFSU, I gained a solid foundation in computer science principles and hands-on experience with various programming languages and technologies.
+                      </p>
+                  </div>
+              </div>
+          </section>
+        </div>
+      <br></br>
         <section id="skills" class="card-body d-flex flex-column align-items-center">
           <h3 class="text-center">
             <small class="text-body-secondary">Notable</small>
@@ -37,10 +54,9 @@
           </h3>
           <%- include('./partials/skills') %>
         </section>
-        
-        
     </main>
   </div>
+  <%- include('./partials/chatBox') %>
   <%- include('./partials/footer') %> 
 </body>
 </html>

@@ -1,0 +1,69 @@
+<!-- Chat Button -->
+<button class="chat-button" onclick="toggleChat()">💬</button>
+
+<!-- Chat Container -->
+<div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+        Chat with Me
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <!-- Messages will be appended here -->
+    </div>
+    <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<!-- Chat Bot JavaScript -->
+<script>
+    function toggleChat() {
+        var chatContainer = document.getElementById('chatContainer');
+        if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+            chatContainer.style.display = 'block';
+        } else {
+            chatContainer.style.display = 'none';
+        }
+    }
+
+    async function sendMessage() {
+        var chatInput = document.getElementById('chatInput');
+        var message = chatInput.value;
+        if (message.trim() === '') return;
+
+        var chatMessages = document.getElementById('chatMessages');
+
+        // Append user's message
+        var userMessage = document.createElement('div');
+        userMessage.textContent = 'You: ' + message;
+        chatMessages.appendChild(userMessage);
+
+        chatInput.value = '';
+
+        // Call the ChatGPT API
+        const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer YOUR_OPENAI_API_KEY'
+            },
+            body: JSON.stringify({
+                prompt: `You are imitating Jacob Gerales. Respond to the following user message: "${message}"`,
+                max_tokens: 150
+            })
+        });
+
+        const data = await response.json();
+        const botMessage = data.choices[0].text.trim();
+
+        // Append bot's response
+        var botResponse = document.createElement('div');
+        botResponse.textContent = 'Jacob Bot: ' + botMessage;
+        chatMessages.appendChild(botResponse);
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+</script>
