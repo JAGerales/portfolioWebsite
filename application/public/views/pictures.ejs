@@ -24,7 +24,7 @@
                         <li class="list-group-item">ISO 100</li>
                     </ul>
                     <div class="card-body">
-                        <a href="#" class="card-link" data-toggle="modal" data-target="#imageModal">View Image</a>
+                        <a href="#" class="card-link" data-toggle="modal" data-target="#imageModal" data-image="images/DSCF0054.JPG" data-title="A Vibrant Breakfast">View Image</a>
                     </div>
                     <div class="card-footer text-muted">
                         Livermore, CA
@@ -33,29 +33,25 @@
             </div>
             <div class="col-md-2 mb-3">
                 <div class="card">
-                    <h3 class="card-header">Card header</h3>
+                    <h3 class="card-header">Goldie The Grumpy</h3>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+                        <h5 class="card-title">FUJIFILM X-T10</h5>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                    </svg>
+                    <img src="images/DSCF0068.JPG" class="card-img-top" alt="Angry Bird">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">The backyard tyrant showing why she's on top of the pecking order.</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">23mm Lens</li>
+                        <li class="list-group-item">f/1.4</li>
+                        <li class="list-group-item">1/125 sec</li>
+                        <li class="list-group-item">ISO 100</li>
                     </ul>
                     <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <a href="#" class="card-link" data-toggle="modal" data-target="#imageModal" data-image="images/DSCF0068.JPG" data-title="Goldie The Grumpy">View Image</a>
                     </div>
                     <div class="card-footer text-muted">
-                        2 days ago
+                        Livermore, CA
                     </div>
                 </div>
             </div>
@@ -177,7 +173,7 @@
     <%- include('./partials/chatBox') %>
     <%- include('./partials/footer') %> 
 
-        <!-- Modal -->
+    <!-- Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -185,15 +181,25 @@
                     <h5 class="modal-title" id="imageModalLabel">A Vibrant Breakfast</h5>
                 </div>
                 <div class="modal-body">
-                    <img src="images/DSCF0054.JPG" class="img-fluid" alt="Pretty Breakfast">
+                    <img src="" id="modalImage" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
     </div>
-    
-        <!-- Bootstrap JS, Popper.js, and jQuery -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $('#imageModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var imageSrc = button.data('image') // Extract info from data-* attributes
+            var title = button.data('title')
+            var modal = $(this)
+            modal.find('.modal-title').text(title)
+            modal.find('#modalImage').attr('src', imageSrc)
+        })
+    </script>
 </body>
 </html>

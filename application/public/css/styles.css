@@ -97,7 +97,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
 .image-container img {
   position: absolute;
   top: 50%;
@@ -105,4 +104,13 @@ body {
   width: auto;
   height: 100%;
   transform: translate(-50%, -50%);
+}
+.card:hover {
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.card-link:hover {
+  text-decoration: none;
+  color: #007bff;
 }
