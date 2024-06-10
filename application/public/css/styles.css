@@ -140,3 +140,6 @@ body {
   color: white; /* Change text color on hover */
   text-decoration: none; /* Remove underline on hover */
 }
+.navbar-brand{
+  margin-left: 10px;
+}
