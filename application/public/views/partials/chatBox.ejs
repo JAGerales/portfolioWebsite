@@ -33,7 +33,7 @@
         var chatInput = document.getElementById('chatInput');
         var message = chatInput.value;
         if (message.trim() === '') return;
-
+        console.log(message);
         var chatMessages = document.getElementById('chatMessages');
 
         // Append user's message
@@ -44,20 +44,16 @@
         chatInput.value = '';
 
         // Call the ChatGPT API
-        const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+        const response = await fetch('http://localhost:3000/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer YOUR_OPENAI_API_KEY'
             },
-            body: JSON.stringify({
-                prompt: `You are imitating Jacob Gerales. Respond to the following user message: "${message}"`,
-                max_tokens: 150
-            })
+            body: JSON.stringify({ message })
         });
 
         const data = await response.json();
-        const botMessage = data.choices[0].text.trim();
+        const botMessage = data.reply;
 
         // Append bot's response
         var botResponse = document.createElement('div');
