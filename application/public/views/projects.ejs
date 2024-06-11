@@ -63,10 +63,32 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-8 offset-md-2">
+                <div class="card mb-4">
+                    <img src="/images/chatBot.gif" class="card-img-top project-image" alt="Chatbot">
+                    <div class="card-body">
+                        <h2 class="card-title">Jacob Bot</h2>
+                        <p class="card-text">A fun and interactive chatbot which mimics my text patterns and knowledge through prompt engineering.</p>
+                        <h4>Technologies Used</h4>
+                        <ul>
+                            <li>LLM: GPT-3.5-turbo-0125</li>
+                            <li>API: openai</li>
+                        </ul>
+                        <h4>Project Details</h4>
+                        <p class="project-details">Wanted to add functionality to portfolio website and gain experience using paid APIs</p>
+                        <ul>
+                            <li>Researched how to purchase, utilize, and integrate GPT-3.5 into my website.</li>
+                            <li>Installed necessary modules to uphold security between requests and facilitate chatbot functionality</li>
+                            <li>Chatbot successfully responding to user input and mimicks my text patterns, background, and knowledge. Constantly refining engineering prompt to improve response quality.</li>
+                        </ul>
+                        <a class="btn btn-primary" onclick="toggleChat()">Click and try it out!</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
-
+    <%- include('./partials/chatBox') %>
     <%- include('./partials/footer') %> 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
