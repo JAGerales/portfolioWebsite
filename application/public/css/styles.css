@@ -143,3 +143,12 @@ body {
 .navbar-brand{
   margin-left: 10px;
 }
+.github-logo {
+  width: 40px;
+  height: 40px;
+  fill: #000; /* Change this color to match your site's theme */
+}
+.github-link {
+  display: inline-block;
+  margin-right: 15px;
+}
