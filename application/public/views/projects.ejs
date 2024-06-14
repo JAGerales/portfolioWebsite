@@ -1,0 +1,97 @@
+<%- include('./partials/header') %>
+<body class="wrapper d-flex flex-column min-vh-100">
+    <%- include('./partials/navbar') %> 
+
+    <ol class="breadcrumb" style="margin-top: 10px; margin-left: 10px;">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Projects</li>
+    </ol>
+
+    <div class="container mt-2">
+        <p>Here are some notable projects that I have developed throughout the years. My projects are a mix of school assignments and personal work.
+        </p>
+        <br></br>
+        <div class="col-md-8 offset-md-2">
+            <div class="card mb-4">
+                <img src="images/ggLogo.png" class="card-img-top project-image" alt="Project Image">
+                <div class="card-body">
+                    <h2 class="card-title">Gator Garage</h2>
+                    <p class="card-text">Senior capstone project which offers ecommerce services to SFSU students, faculty, and staff. Worked in a diverse team of 6 and applied industry work methodologies such as SCRUM. </p>
+                    <h4>Technologies Used</h4>
+                    <ul>
+                        <li>Language: JavaScript, CSS, HTML</li>
+                        <li>Database: MySQL</li>
+                        <li>NodeJS Libraries: Express, Express-Session, Multer, Sharp, mysql2</li>
+                        <li>Template Engine: EJS</li>
+                    </ul>
+                    <h4>Project Details</h4>
+                    <p class="project-details">Users shall be able to post items, log in, sign up for an account, and message users.</p>
+                        <ul>
+                            <li>Tasked with designing mySQL database.</li>
+                            <li>Referenced use cases and personas to help with initial design process of database.</li>
+                            <li>MySQL database currently being maintained with user posted content and user credentials including hashed password.</li>
+                        </ul>
+                    <p class="project-details">Middleware must be created in order to facilitate website functionality.</p>
+                        <ul>
+                            <li>Tasked with designing middleware that handles various website functions.</li>
+                            <li>Met with frontend lead to ensure that middleware design complimented the front end.</li>
+                            <li>Unit tests created alongside middleware to uphold bug - free web application.</li>
+                        </ul>
+                    <a href="https://gatorgarage.net" target="_blank" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-8 offset-md-2">
+                <div class="card mb-4">
+                    <img src="/images/gatorDash.gif" class="card-img-top project-image" alt="Project Image">
+                    <div class="card-body">
+                        <h2 class="card-title">Gator Dash</h2>
+                        <p class="card-text">A fun 2D platformer that challenges the player to race against the clock or reverse time to make it to class on time!</p>
+                        <h4>Technologies Used</h4>
+                        <ul>
+                            <li>Engine: Unity 2D</li>
+                            <li>Languages: C#, ShaderLab, HLSL</li>
+                        </ul>
+                        <h4>Project Details</h4>
+                        <p class="project-details">Assumed team lead and handled project management to ensure a quality project is delivered on time.</p>
+                        <ul>
+                            <li>Had to lead a team of 3 to create a game without prior game development experience.</li>
+                            <li>Delegated roles early into project development and assigned checkpoints daily and weekly. Applied SCRUM to monitor progress. </li>
+                            <li>Successfully delivered project on time and without bugs. Implemented dynamic blinn - phong lighting, player movement logic, and texturing.</li>
+                        </ul>
+                        <a href="https://github.com/JAGerales/csc630_gatorDash" target="_blank" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 offset-md-2">
+                <div class="card mb-4">
+                    <img src="/images/chatBot.gif" class="card-img-top project-image" alt="Chatbot">
+                    <div class="card-body">
+                        <h2 class="card-title">Jacob Bot</h2>
+                        <p class="card-text">A fun and interactive chatbot which mimics my text patterns and knowledge through prompt engineering.</p>
+                        <h4>Technologies Used</h4>
+                        <ul>
+                            <li>LLM: GPT-3.5-turbo-0125</li>
+                            <li>API: openai</li>
+                        </ul>
+                        <h4>Project Details</h4>
+                        <p class="project-details">Wanted to add functionality to portfolio website and gain experience using paid APIs</p>
+                        <ul>
+                            <li>Researched how to purchase, utilize, and integrate GPT-3.5 into my website.</li>
+                            <li>Installed necessary modules to uphold security between requests and facilitate chatbot functionality</li>
+                            <li>Chatbot successfully responding to user input and mimicks my text patterns, background, and knowledge. Constantly refining engineering prompt to improve response quality.</li>
+                        </ul>
+                        <a class="btn btn-primary" onclick="toggleChat()">Click and try it out!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <%- include('./partials/chatBox') %>
+    <%- include('./partials/footer') %> 
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

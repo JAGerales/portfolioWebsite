@@ -1,0 +1,192 @@
+<%- include('./partials/header') %>
+<body class="wrapper d-flex flex-column min-vh-100">
+    <%- include('./partials/navbar') %> 
+    <ol class="breadcrumb" style="margin-top: 10px; margin-left: 10px;">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Pictures</li>
+    </ol>
+
+    <div class="container-fluid mt-4">
+        <p>Here are some specially curated photos alongside some camera information!
+        </p>
+        <div class="row">
+            <div class="col-md-2 mb-3">
+                <div class="card">
+                    <h3 class="card-header">A Vibrant Breakfast</h3>
+                    <div class="card-body">
+                        <h5 class="card-title">FUJIFILM X-T10</h5>
+                    </div>
+                    <img src="images/DSCF0054.JPG" class="card-img-top" alt="Pretty Breakfast">
+                    <div class="card-body">
+                        <p class="card-text">Kicking off the morning with sugar and color.</p>
+                    </div>
+                    <ul class="list-group list-group-flush mt-auto">
+                        <li class="list-group-item">23mm Lens</li>
+                        <li class="list-group-item">f/2.8</li>
+                        <li class="list-group-item">1/8 sec</li>
+                        <li class="list-group-item">ISO 100</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link mt-auto btn btn-outline-secondary" data-toggle="modal" data-target="#imageModal" data-image="images/DSCF0054.JPG" data-title="A Vibrant Breakfast">View Image</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Livermore, CA
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mb-3">
+                <div class="card">
+                    <h3 class="card-header">Goldie The Grumpy</h3>
+                    <div class="card-body">
+                        <h5 class="card-title">FUJIFILM X-T10</h5>
+                    </div>
+                    <img src="images/DSCF0068.JPG" class="card-img-top" alt="Angry Bird">
+                    <div class="card-body">
+                        <p class="card-text">The backyard tyrant showing why she's on top of the pecking order.</p>
+                    </div>
+                    <ul class="list-group list-group-flush mt-auto">
+                        <li class="list-group-item">23mm Lens</li>
+                        <li class="list-group-item">f/1.4</li>
+                        <li class="list-group-item">1/125 sec</li>
+                        <li class="list-group-item">ISO 100</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link mt-auto btn btn-outline-secondary" data-toggle="modal" data-target="#imageModal" data-image="images/DSCF0068.JPG" data-title="Goldie The Grumpy">View Image</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Livermore, CA
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mb-3">
+                <div class="card">
+                    <h3 class="card-header">Hudson River</h3>
+                    <div class="card-body">
+                        <h5 class="card-title">Apple iPhone 11</h5>
+                    </div>
+                    <img src="images/IMG_2440.jpg" class="card-img-top" alt="New York City">
+                    <div class="card-body">
+                        <p class="card-text">An otherworldly view of New York City.</p>
+                    </div>
+                    <ul class="list-group list-group-flush mt-auto">
+                        <li class="list-group-item">26 mm Lens</li>
+                        <li class="list-group-item">f/1.8</li>
+                        <li class="list-group-item">1/1504 sec</li>
+                        <li class="list-group-item">ISO 32</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link mt-auto btn btn-outline-secondary" data-toggle="modal" data-target="#imageModal" data-image="images/IMG_2440.jpg" data-title="Hudson River">View Image</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        New York City, NY
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mb-3">
+                <div class="card">
+                    <h3 class="card-header">Concrete Sunbathing</h3>
+                    <div class="card-body">
+                        <h5 class="card-title">Apple iPhone 15 Pro</h5>
+                    </div>
+                    <img src="images/IMG_4479.jpg" class="card-img-top" alt="Reptile Sunbathing">
+                    <div class="card-body">
+                        <p class="card-text">Caught this little guy relaxing after a long day of work.</p>
+                    </div>
+                    <ul class="list-group list-group-flush mt-auto">
+                        <li class="list-group-item">24 mm Lens</li>
+                        <li class="list-group-item">f/1.78</li>
+                        <li class="list-group-item">1/2833 sec</li>
+                        <li class="list-group-item">ISO 80</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link mt-auto btn btn-outline-secondary" data-toggle="modal" data-target="#imageModal" data-image="images/IMG_4479.jpg" data-title="Concrete Sunbathing">View Image</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Livermore, CA
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mb-3">
+                <div class="card">
+                    <h3 class="card-header">Bombay in the Shade</h3>
+                    <div class="card-body">
+                        <h5 class="card-title">Apple iPhone 15 Pro</h5>
+                    </div>
+                    <img src="images/IMG_4294.jpg" class="card-img-top" alt="Kitty">
+                    <div class="card-body">
+                        <p class="card-text">Looking sharp in this candid shot.</p>
+                    </div>
+                    <ul class="list-group list-group-flush mt-auto">
+                        <li class="list-group-item">24 mm Lens</li>
+                        <li class="list-group-item">f/1.78</li>
+                        <li class="list-group-item">1/1152 sec</li>
+                        <li class="list-group-item">ISO 64</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link mt-auto btn btn-outline-secondary" data-toggle="modal" data-target="#imageModal" data-image="images/IMG_4294.jpg" data-title="Bombay in the Shade">View Image</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Livermore, CA
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mb-3">
+                <div class="card">
+                    <h3 class="card-header">Stickering</h3>
+                    <div class="card-body">
+                        <h5 class="card-title">FUJIFILM X-T10</h5>
+                    </div>
+                    <img src="images/DSCF0052.JPG" class="card-img-top" alt="Sign">
+                    <div class="card-body mt-auto">
+                        <p class="card-text">Street marketing made stylish.</p>
+                    </div>
+                    <ul class="list-group list-group-flush mt-auto">
+                        <li class="list-group-item">23 mm Lens</li>
+                        <li class="list-group-item">f/1.4</li>
+                        <li class="list-group-item">1/1500 sec</li>
+                        <li class="list-group-item">ISO 100</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link mt-auto btn btn-outline-secondary" data-toggle="modal" data-target="#imageModal" data-image="images/DSCF0052.JPG" data-title="Stickering">View Image</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Livermore, CA
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+    <%- include('./partials/chatBox') %>
+    <%- include('./partials/footer') %> 
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel"></h5>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="modalImage" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $('#imageModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var imageSrc = button.data('image') // Extract info from data-* attributes
+            var title = button.data('title')
+            var modal = $(this)
+            modal.find('.modal-title').text(title)
+            modal.find('#modalImage').attr('src', imageSrc)
+        })
+    </script>
+</body>
+</html>
