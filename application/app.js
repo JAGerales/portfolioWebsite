@@ -6,7 +6,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const OpenAI = require('openai');
+const validator = require('validator');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
 const port = 3000;
@@ -34,9 +35,11 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// chatGPT API Configuration
-const openai = new OpenAI({
-  apiKey: process.env.OPEN_API_KEY
+// Contact Form Limiter
+const contactFormLimiter = rateLimit({
+  windowsMs: 15 * 60 * 1000, // 15 min
+  max: 10, // 10 requests every 15 min
+  message: "Too many requests from this IP. Limiting Contact"
 });
 
 // Route for the home page
@@ -45,9 +48,16 @@ app.get('/', (req, res) => {
 });
 
 // Route for Contact Me
-app.post('/contactMe', async (req, res) => {
-  const { name, email, message } = req.body;
+app.post('/contactMe', contactFormLimiter, async (req, res) => {
+  const { name, email, message, hiddenField } = req.body;
 
+  if (hiddenField){
+    return res.status(400).send('Bot Detected. Leave me alone!');
+  }
+  if (!validator.isEmail(email) || !validator.isLength(message, { min: 1, max: 500 })) {
+    return res.status(400).send('Invalid Input');
+  } 
+ 
   const mailOptions = {
     from: email, // Sender address
     to: process.env.EMAIL_USER, // List of recipients
@@ -62,31 +72,6 @@ app.post('/contactMe', async (req, res) => {
   } catch (error) {
     console.error('Error sending email:', error);
     res.status(500).send('Error sending message.');
-  }
-});
-
-app.post('/chat', async (req, res) => {
-  const { message } = req.body;
-
-  try{
-    const chatCompletion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
-      messages: [
-        {"role": "system", "content": `You are a helpful chatbot that mimics Jacob Gerales' speech patterns and knowledge. You are hosted on his portfolio website and you want to impress those that interact with his page.
-        Jacob is friendly, likes to sometimes drop bay area slang, and likes to write messages in lower case. he also likes to space out his periods, question marks and exclamations. for example, he would say "Hi, nice to meet you !" 
-        He also has a unique habit of using b/c instead of because as well as traditional internet slang such as lol, btw, fyi, and bruh. he uses slang very sparingly though
-        If someone asks for contact info, provide this email address: jacob.a.gerales@gmail.com
-        He has computer science knowledge at a bachelor level, powerlifts, takes photos with a FUJIFILM X-T10, and plays video games such as League of Legends and Rainbow Six Seige
-        He is a second generation filipino american, 24 years old, and is looking for a job`},
-        {"role": "user", "content": message}]
-    });
-    console.log(chatCompletion.choices[0].message);
-    const botMessage = chatCompletion.choices[0].message;
-    console.log(botMessage.content);
-    res.json({ reply: botMessage.content });
-  } catch (error){
-    console.log('Error: ', error);
-    res.status(500).send('Error interacting with chatbot');
   }
 });
 
