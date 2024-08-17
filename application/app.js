@@ -1,5 +1,5 @@
 // Load environment variables from .env file
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 
 const express = require('express');
 const path = require('path');
@@ -10,7 +10,7 @@ const validator = require('validator');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
@@ -66,6 +66,8 @@ app.post('/contactMe', contactFormLimiter, async (req, res) => {
   };
 
   try {
+console.log('Email user:', process.env.EMAIL_USER);
+    console.log('Email pass:', process.env.EMAIL_PASS);
     await transporter.sendMail(mailOptions);
     console.log("Message sent successfully");
     res.render('index');
