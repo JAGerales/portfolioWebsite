@@ -5,6 +5,74 @@
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item active">Blog</li>
     </ol>
+    <div class="container mt-2">
+        <h1> Dev Blog #1: LiftWyse</h1>
+        <p><small>November 17, 2024</small></p>
+
+        <p>When I go to the gym, I usually take mental notes on where I am in the workout and what the next
+            few sets will look like. Despite doing that for years, I've gotten tired of digging through my head
+            to remember the results of each set. Sure there are apps out there that solve this problem for me, but 
+            why not just build the answer yourself?
+        </p><br>
+
+        <h2>Inception</h2>
+        <p>LiftWyse was first an app I would daydream about creating. It had an impressive list of features and 
+            even included a paid service that allows the user to track bar paths to optimize their form. It's easier
+            said than done, but this vision would never be realized unless I took the first steps. After some R&R, I started 
+            designing on Figma and researching the best tech stack for my idea.
+        </p>
+        <p>My initial mockups took about a week to do. I took time to think about things from the user's perspective, focusing
+            on a seamless user experience and having users input their workout data in as little clicks as possible. This
+            perspective definitely affected the systems I would design then later use in the app. 
+        </p><br>
+
+        <div class="card">
+            <div class="card-body">
+              <img src="images/liftWyse_mockups.png" class="card-img-top project-image" alt="Project Image">
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">&nbsp; Entire App mockup via Figma</h6>
+        </div><br>
+
+        <p>If you noticed the beautiful MSPaint mockups, these are the updated designs that influenced
+            me to utilize the "Tinder - Like" swipe gestures. Initially, users would have to determine the
+            result of their set in the same page where they type in the anticipated set weight and rep number.
+            I went to my QA engineer (my mom) multiple times to share updates on my progress and this was the 
+            biggest point of concern. The initial flowpath of adding workouts was awkward, so I felt that
+            the card swiping mechanic made logging workouts both seamless and efficient. 
+        </p>
+
+        <p>At this point, I only have the plan and workout pages implemented on both ends. The UI 
+            on both pages are a bit different that what's on the mockups; however, they function exactly
+            how I envisioned. The plan page served as a way to let users enter their planned workouts for the day.
+            The workout page would present the user with a stack of cards that display set information
+            displayed in FIFO order. Similar to dating apps like Tinder, a user can swipe left to indicate
+            that their set was unsuccesful (did not complete desired rep range) or right to assign a complete status
+            to a given set.
+        </p><br>
+
+        <h2>About those screenshots...</h2>
+        <p>"Why would he be writing a dev blog so early into development?" It's a valid point, 
+            and the reason for that is a bit more frustrating. During early development, I decided to use 
+            React Native with the tools that Expo Go provides. I chose Expo Go for multiple reasons,
+            but the main ones were that Expo Go had a powerful CLI for development and I was working 
+            on a Windows machine while designing an app to be compatible with iOS.
+        </p>
+
+        <p>Halfway into debugging some issues with the cards, Expo SDK updated to version 12 and made 
+            it to where accessing my app became impossible without updating installed modules. After 
+            going through the installation, I come to find out that the app I use to display my project 
+            on my phone doesn't support projects built on SDK 11. This issue still puzzles me because I 
+            had gone through the updating process yet Expo Go identifies my app as using version 11.
+        </p>
+
+        <p>I'm disappointed in the lack of actual screenshots and am currently working to retrieving them! 
+            But if screenshots can't be shown, then this would be a great opportunity to delve into the 
+            codebase and showcase the systems running under the hood.
+        </p><br>
+
+        <h2>Logging Workouts</h2>
+        
+    </div>
     <%- include('./partials/footer') %> 
 </body>
 </html>

@@ -1,5 +1,5 @@
 // Load environment variables from .env file
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config();
 
 const express = require('express');
 const path = require('path');
@@ -66,8 +66,6 @@ app.post('/contactMe', contactFormLimiter, async (req, res) => {
   };
 
   try {
-console.log('Email user:', process.env.EMAIL_USER);
-    console.log('Email pass:', process.env.EMAIL_PASS);
     await transporter.sendMail(mailOptions);
     console.log("Message sent successfully");
     res.render('index');
@@ -91,6 +89,7 @@ app.get('/pictures', (req, res) => {
 app.get('/blog', (req, res) => {
   res.render('blog');
 });
+
 
 // Start the server
 app.listen(port, () => {
