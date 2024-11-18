@@ -18,11 +18,11 @@
         <h2>Inception</h2>
         <p>LiftWyse was first an app I would daydream about creating. It had an impressive list of features and 
             even included a paid service that allows the user to track bar paths to optimize their form. It's easier
-            said than done, but this vision would never be realized unless I took the first steps. After some R&R, I started 
-            designing on Figma and researching the best tech stack for my idea.
+            said than done, but this vision would never be realized unless I took the first steps. After graduating
+            and some well deserved R&R, I started designing on Figma and researching the best tech stack for my idea.
         </p>
-        <p>My initial mockups took about a week to do. I took time to think about things from the user's perspective, focusing
-            on a seamless user experience and having users input their workout data in as little clicks as possible. This
+        <p>My initial mockups took about a week to do. I gave myself time to think about how I would want my features to look and feel
+            from the user's perspective, focusing on a seamless user experience and having users input their workout data in as little clicks as possible. This
             perspective definitely affected the systems I would design then later use in the app. 
         </p><br>
 
@@ -71,7 +71,93 @@
         </p><br>
 
         <h2>Logging Workouts</h2>
-        
+        <p>I wanted exposure to a NoSQL database and I decided with Firebase since it matches the 
+            scale of my project. I'm glad I used Firebase because now I have a better understanding 
+            of NoSQL databases. I can appreciate how you can dynamically create the design of the database
+            with your own reference paths. In my experience with MySQL, I had to create and assign each table and determine 
+            relationships between each node based on . Additionally, the database API was simple to initialize and use. I ended 
+            up abstracting my database queries into a single file called fbService.js. For logging workouts, 
+            I have a function addWorkout that takes user data, transforms that into a custom 
+            data object, and adds it into the database. 
+        </p><br>
+
+        <div class="card">
+            <div class="card-body">
+              <img src="images/liftWyse_db.png" class="card-img-top project-image" alt="Project Image">
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">&nbsp; workouts table of database</h6>
+        </div><br>
+
+        <p>Setting up Firebase, I mainly relied on AI to guide me through the initialization process. I ran into 
+            multiple roadblocks along the way mainly because I failed to test everything that GenAI would give me.
+            If I were to take one thing from this project, its to always double check the answers given by GenAI!
+        </p>
+
+        <div class="card">
+            <div class="card-body">
+              <img src="images/liftWyse_logWorkout.png" class="card-img-top project-image" alt="Project Image">
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">&nbsp; Function for adding workout</h6>
+        </div><br>
+
+        <p>Overall, Firebase was fairly simple to use and extremely user friendly. Firebase's API documentation 
+            was very helpful and didn't feel awful to read. </p><br>
+
+        <h2>Pick A Card</h2>
+        <p>At first, implementing the card functionality sounded like a difficult thing to do. Thankfully, there 
+            were resources online that I was able to read and understand how I can tackle this problem. The first initial 
+            issue was how I would even display a stack of cards. I decided to abstract the card itself and create a component
+            called liftCard.tsx. Then in the lift page, I would iterate through an array of card components each containing its 
+            respective set information. I used multiple different npm packages to facilitate this feature, including 
+            react-native-deck-swiper, react-native-gesture-handler, and react-native-reanimated. 
+        </p>
+
+        <div class="card">
+            <div class="card-body">
+              <img src="images/liftWyse_swiper.png" class="card-img-top project-image" alt="Project Image">
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">&nbsp; HTML for displaying deck of cards </h6>
+        </div><br>
+
+        <p>The other issue was how could I detect if a user swipes either left or right? I initially thought about recording 
+            the X position of the user's finger from the start of the swipe to the end of the swipe. I wasn't quite sure how to 
+            implement this approach. After some research, I was able to use the width of the screen area. By using the width and comparing it to the X position of where the swipe ended, 
+            I can divide the screen in half and use the last X value to determine which side of the screen it is. I would then 
+            use runOnJS, a function provided by React Native Reanimated 2 library to execute JS functions in the workout page.
+        </p>
+
+        <div class="card">
+            <div class="card-body">
+              <img src="images/liftWyse_endSwipe.png" class="card-img-top project-image" alt="Project Image">
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">&nbsp; TS Function for handling swipe end </h6>
+        </div><br>
+
+        <p>So by this point the cards are functional with triggers and animation! Now I had to develop the backend and connect 
+            it to the cards. fetchWorkouts is a integral function responsible for correctly populating the card stack in 
+            FIFO order. This is another reason I chose to use Firebase; Its straightforward to query items in FIFO order. 
+            By assigning an ID to each entry, I am able to pull from the database based on incrementing IDs.
+        </p>
+
+        <div class="card">
+            <div class="card-body">
+              <img src="images/liftWyse_fetchWorkouts.png" class="card-img-top project-image" alt="Project Image">
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">&nbsp; TS Function for fetching workouts </h6>
+        </div><br>
+
+        <p>Now the card is populated with info! But at this point, there isn't much to do with the cards 
+            other than swipe on them. There isn't anything else you can do with the cards, but I intend on 
+            adding things like deleting from DB and adding notes to each set.
+        </p>
+
+        <h2>Onwards to new things</h2>
+        <p>Due to my current goals and my increasing frustration towards debugging my tech stack, I decided 
+            to put this project on the backburner for now and pivot into learning to program a Raspberry Pi and studying 
+            for certs like CompTIA Network+. I look forward to going back into this project and fully realizing this app!
+        </p>
+
+        <a href="https://github.com/JAGerales/liftWyse" target="_blank" class="btn btn-primary">View Project</a>
     </div>
     <%- include('./partials/footer') %> 
 </body>
