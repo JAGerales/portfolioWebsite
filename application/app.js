@@ -86,8 +86,8 @@ app.get('/pictures', (req, res) => {
 });
 
 // Route for Blog
-app.get('/blog', (req, res) => {
-  res.render('blog');
+app.get('/blogs/liftWyse1', (req, res) => {
+  res.render('blogs/liftWyse_1');
 });
 
 
