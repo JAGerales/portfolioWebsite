@@ -130,3 +130,24 @@ body {
       display: block;
   }
 }
+
+.gallery-page {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-page.active {
+  display: block;
+  opacity: 1;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pagination-controlsbutton {
+  min-width: 100px;
+}
